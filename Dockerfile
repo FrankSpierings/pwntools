@@ -13,7 +13,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 # Convenience setup
-RUN apt-get install python python-pip bsdmainutils strace ltrace vim tmux -y && \
+RUN apt-get install python python-pip bsdmainutils qemu strace ltrace vim tmux -y && \
     pip install --upgrade pip && \
     pip install --upgrade ipython
 
