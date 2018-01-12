@@ -20,3 +20,9 @@ For convenience it also contains:
 
 ### Switch gdb
 - To switch the frontend (`pwndbg`, `peda` or `gef`) of `gdb`, modify `~/.gdbinit`
+
+
+### Run
+
+- OSX (iTerm2): `NAME=pwntools; docker run -it -v /tmp/data:/tmp/data --privileged --name ${NAME} --hostname ${NAME} frankspierings/pwntools tmux -CC`
+- Linux: `NAME=pwntools; docker run -it -v /tmp/data:/tmp/data --privileged --name ${NAME} --hostname ${NAME} frankspierings/pwntools /bin/bash`
