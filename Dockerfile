@@ -45,7 +45,7 @@ RUN DSTDIR=/opt && \
 # Pwntools
 RUN apt-get install libcapstone3 python2.7 python-pip python-dev git libssl-dev libffi-dev build-essential -y && \
     pip install --upgrade pip && \
-    pip install --upgrade git+https://github.com/Gallopsled/pwntools.git
+    pip install --upgrade git+https://github.com/Gallopsled/pwntools.git@stable
 
 # Angr for symbolic execution
 RUN pip install --upgrade angr
