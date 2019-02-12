@@ -50,10 +50,16 @@ RUN apt-get install libcapstone3 python2.7 python-pip python-dev git libssl-dev 
 # Angr for symbolic execution
 RUN python -m pip install --upgrade angr
 
+# Install Radare2
+RUN DSTDIR=/tmp && \
+    cd ${DSTDIR} && \
+    git clone  https://github.com/radare/radare2.git && \
+    cd radare2 && \
+    sys/install.sh
+
 # Clean up
 RUN apt-get autoclean -y && \
     apt-get autoremove -y && rm -rf /tmp/*
-
 
 ###
 ### Build this file: `docker build -t pwntools .`
