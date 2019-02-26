@@ -51,7 +51,7 @@ RUN apt-get install libcapstone3 python2.7 python-pip python-dev git libssl-dev 
 RUN python -m pip install --upgrade angr
 
 # Install Radare2
-RUN DSTDIR=/tmp && \
+RUN DSTDIR=/opt && \
     cd ${DSTDIR} && \
     git clone  https://github.com/radare/radare2.git && \
     cd radare2 && \
