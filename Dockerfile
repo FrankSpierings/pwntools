@@ -43,7 +43,7 @@ RUN DSTDIR=/opt && \
     echo "# source ${DSTDIR}/gef/gdbinit-gef.py" >> ~/.gdbinit
 
 # Pwntools
-RUN apt-get install libcapstone3 python2.7 python-pip python-dev git libssl-dev libffi-dev build-essential -y && \
+RUN apt-get install sshpass libcapstone3 python2.7 python-pip python-dev git libssl-dev libffi-dev build-essential -y && \
     python -m pip install --upgrade pip && \
     python -m pip install --upgrade git+https://github.com/Gallopsled/pwntools.git@stable
 
