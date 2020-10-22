@@ -10,8 +10,10 @@ RUN dpkg --add-architecture i386 \
 
 # Locales setup
 RUN apt-get update \
+    && DEBIAN_FRONTEND="noninteractive" \
     && apt-get install -y \
         locales \
+        tzdata \
     && rm -rf /var/lib/apt/lists/* \
     && locale-gen en_US.UTF-8
 
