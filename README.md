@@ -7,6 +7,7 @@ This container has some tools for playing CTF's.
 - pwndbg: https://github.com/pwndbg/pwndbg
 - peda: https://github.com/longld/peda
 - gef: https://github.com/hugsy/gef
+- radara2: https://rada.re/r/
 
 For convenience it also contains:
 - qemu
