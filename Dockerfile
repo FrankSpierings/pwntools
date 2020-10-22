@@ -23,15 +23,15 @@ RUN apt-get update \
     && apt-get install -y \
         bsdmainutils \
         ltrace \
-        python \
-        python-pip \
+        python3 \
+        python3-pip \
         qemu \
         strace \
         tmux \
         vim \
     && rm -rf /var/lib/apt/lists/* \
-    && python -m pip install --upgrade pip \
-    && python -m pip install --upgrade ipython
+    && python3 -m pip install --upgrade pip \
+    && python3 -m pip install --upgrade ipython
 
 # GDB setup
 RUN apt-get update \
@@ -46,7 +46,7 @@ RUN apt-get update \
         git \
         sudo \
     && rm -rf /var/lib/apt/lists/* \
-    && python -m pip install --upgrade git+https://github.com/sashs/ropper.git \
+    && python3 -m pip install --upgrade ropper \
     && DSTDIR=/opt \
     && cd ${DSTDIR} \
     && git clone https://github.com/pwndbg/pwndbg \
@@ -75,15 +75,14 @@ RUN apt-get update \
     && apt-get install -y \
         build-essential \
         git \
-        libcapstone3 \
         libffi-dev \
         libssl-dev \
-        python-dev \
-        python-pip \
-        python2.7 \
+        python3 \
+        python3-dev \
+        python3-pip \
     && rm -rf /var/lib/apt/lists/* \
-    && python -m pip install --upgrade pip \
-    && python -m pip install --upgrade git+https://github.com/Gallopsled/pwntools.git@stable
+    && python3 -m pip install --upgrade pip \
+    && python3 -m pip install --upgrade pwntools
 
 # Angr for symbolic execution
 RUN python3 -m pip install --upgrade angr
