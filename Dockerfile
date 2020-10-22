@@ -3,8 +3,9 @@ MAINTAINER Frank Spierings
 
 # Base setup
 RUN dpkg --add-architecture i386 \
-    && apt-get update \
-    && apt-get install -y libstdc++6:i386 \
+    && apt update \
+    && apt install -y -o APT::Immediate-Configure=0 libstdc++6:i386 \
+    && apt install -f \
     && rm -rf /var/lib/apt/lists/*
 
 # Locales setup
